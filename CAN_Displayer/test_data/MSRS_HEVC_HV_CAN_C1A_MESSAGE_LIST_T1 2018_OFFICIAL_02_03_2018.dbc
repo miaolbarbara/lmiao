@@ -1,0 +1,882 @@
+VERSION ""
+
+
+NS_ :
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	Filter
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: HEVC BMS2_HV BMS_HV DCDC_HV HECM INV_HSG INV_ME OBC_AC RECT ECUxx
+
+
+BO_ 876 BMS2_RN1: 8 BMS2_HV
+ SG_ BMS2_RefusetoSleep : 7|2@0+ (1,0) [0|0] "" HEVC
+ SG_ LBCPRUNAnswer_RCY : 15|8@0+ (1,0) [0|0] "" HEVC
+ SG_ HVIsolationImpedance_RCY : 23|14@0+ (100,0) [0|1000000] "Ohm" HEVC
+ SG_ HVPowerConnection_RCY : 25|2@0+ (1,0) [0|0] "" HEVC
+ SG_ BMS2_FaultType : 35|3@0+ (1,0) [0|0] "" HEVC
+ SG_ OperatingTypeStatus_RCY : 45|4@0+ (1,0) [0|0] "" HEVC
+ SG_ Clock_BMS2_RN1 : 51|4@0+ (1,0) [0|15] "" HEVC
+ SG_ CRC_BMS2_RN1 : 63|8@0+ (1,0) [0|255] "" HEVC
+
+BO_ 903 BMS2_RN2: 1 BMS2_HV
+ SG_ BMS2_ElecSysFailureDisplay : 7|1@0+ (1,0) [0|0] "" HEVC
+ SG_ BMS2_MajorElecFailureDisplay : 6|1@0+ (1,0) [0|0] "" HEVC
+ SG_ BMS2_ChargeFailureDisplay : 5|1@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1198 BMS_CANHS_R_08: 8 BMS_HV
+ SG_ HVB_TempMaxSfty_Threshold : 7|7@0+ (1,-40) [-40|80] "°C" HEVC
+ SG_ HVB_TempMaxPerfLimitHot_Threshold : 15|7@0+ (1,-40) [-40|80] "°C" HEVC
+ SG_ HVB_TempMinPerfLimitCold_Threshold : 23|7@0+ (1,-40) [-40|80] "°C" HEVC
+ SG_ HVB_TempMaxAfterChg_Threshold : 31|7@0+ (1,-40) [-40|80] "°C" HEVC
+ SG_ HVB_TempMaxBegCooling_Threshold : 39|7@0+ (1,-40) [-40|80] "°C" HEVC
+ SG_ HVB_TempMinBegHeating_Threshold : 47|7@0+ (1,-40) [-40|80] "°C" HEVC
+ SG_ HVB_TempMaxStopCooling_Threshold : 55|7@0+ (1,-40) [-40|80] "°C" HEVC
+ SG_ HVB_TempMaxStopHeating_Threshold : 63|7@0+ (1,-40) [-40|80] "°C" HEVC
+
+BO_ 1199 BMS_CANHS_R_09: 7 BMS_HV
+ SG_ HVB_TempMinStopCooling_Threshold : 7|7@0+ (1,-40) [-40|80] "°C" HEVC
+ SG_ ClosedCircuit_CellMaxVoltage_Threshold : 0|9@0+ (0.01,1) [1|5] "V" HEVC
+ SG_ ClosedCircuit_CellMinVoltage_Threshold : 23|9@0+ (0.01,1) [1|5] "V" HEVC
+ SG_ HVB_MaxCapacity_v2 : 37|11@0+ (0.05,0) [0|100] "kWh" HEVC
+ SG_ NextMissionHVbatAvailablePower : 42|11@0+ (0.1,0) [0|150] "KW" HEVC
+
+BO_ 248 BMS_RN1: 7 BMS_HV
+ SG_ HVIsolationImpedance : 7|14@0+ (100,0) [0|1000000] "Ohm" HEVC
+ SG_ BMS_InterlockHVconnector_v2 : 9|2@0+ (1,0) [0|0] "" HEVC
+ SG_ BMS_HVNetworkVoltage_v2 : 23|13@0+ (0.1,0) [0|500] "V" HEVC
+ SG_ HVBatInstantCurrent_v2 : 38|13@0+ (0.125,-500) [-500|500] "A" HEVC
+ SG_ HVPowerConnection : 41|2@0+ (1,0) [0|0] "" HEVC
+ SG_ BMS_InterlockServicePlug_v2 : 55|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1554 BMS_RN11: 4 BMS_HV
+ SG_ HVB_OverVoltageAlert_HV : 7|1@0+ (1,0) [0|0] "" HEVC
+ SG_ HVBatterySOC_HV : 6|7@0+ (1,0) [0|100] "%" HEVC
+ SG_ HVB_UnderVoltageAlert_HV : 15|1@0+ (1,0) [0|0] "" HEVC
+ SG_ HVB_MaxTempProbe_HV : 14|7@0+ (1,-40) [-40|80] "°C" HEVC
+ SG_ HVB_CellOverVoltageAlert_HV : 23|1@0+ (1,0) [0|0] "" HEVC
+ SG_ HVB_MinTempProbe_HV : 22|7@0+ (1,-40) [-40|80] "°C" HEVC
+ SG_ HVB_CellUnderVoltageAlert_HV : 31|1@0+ (1,0) [0|0] "" HEVC
+ SG_ HVB_OverChargingAlert_HV : 30|1@0+ (1,0) [0|0] "" HEVC
+ SG_ HVBatteryTempWarning_HV : 29|1@0+ (1,0) [0|0] "" HEVC
+
+BO_ 897 BMS_RN2: 8 BMS_HV
+ SG_ LBCPRUNAnswer : 7|8@0+ (1,0) [0|0] "" HEVC
+ SG_ AvailablePowerShortTerm : 22|9@0+ (0.25,0) [0|100] "kW" HEVC
+ SG_ EndOfChargeRequest : 29|2@0+ (1,0) [0|0] "" HEVC
+ SG_ AvailablePower_v4 : 27|10@0+ (0.25,0) [0|255] "KW" HEVC
+ SG_ UserSOC_HV : 33|13@0+ (0.02,0) [0|100] "%" HEVC
+ SG_ AvailableEnergy_v2 : 52|11@0+ (0.05,0) [0|100] "kWh" HEVC
+ SG_ BMS_RefusetoSleep : 57|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 898 BMS_RN3: 8 BMS_HV
+ SG_ HVBatteryTemp : 7|7@0+ (1,-40) [-40|80] "°C" HEVC
+ SG_ GeneratedPower_v3 : 0|10@0+ (0.25,0) [0|255] "kW" HEVC
+ SG_ CellHighestVoltage : 16|9@0+ (0.01,1) [1|5] "V" HEVC
+ SG_ HVBatteryTempMin : 39|7@0+ (1,-40) [-40|80] "°C" HEVC
+ SG_ CellLowestVoltage : 32|9@0+ (0.01,1) [1|5] "V" HEVC
+ SG_ HVBatteryCoolingLoopTemp : 55|8@0+ (1,-40) [-40|214] "°C" HEVC
+ SG_ HVBatteryTempMax : 63|7@0+ (1,-40) [-40|80] "°C" HEVC
+
+BO_ 882 BMS_RN4: 7 BMS_HV
+ SG_ HVBatSerialNumber : 7|32@0+ (1,0) [0|0] "" HEVC
+ SG_ HVBatWhPerUSOC_V2 : 35|17@0+ (0.01,0) [0|800] "(W.h)/ %" HEVC
+
+BO_ 904 BMS_RN7: 8 BMS_HV
+ SG_ BMS_ElecSysFailureDisplay : 7|1@0+ (1,0) [0|0] "" HEVC
+ SG_ BMS_MajorElecFailureDisplay : 6|1@0+ (1,0) [0|0] "" HEVC
+ SG_ BMS_ChargeFailureDisplay : 5|1@0+ (1,0) [0|0] "" HEVC
+ SG_ GeneratedPowerShortTerm : 4|9@0+ (0.25,0) [0|100] "kW" HEVC
+ SG_ HVB_HighTempAlert_HV : 9|1@0+ (1,0) [0|0] "" HEVC
+ SG_ BMS_TiAlert : 8|1@0+ (1,0) [0|0] "" HEVC
+ SG_ HVBatteryBlowerFdbk_v2 : 23|6@0+ (4,0) [0|255] "Hz" HEVC
+ SG_ HVBatAirIntakeTemp : 55|7@0+ (1,-40) [-40|80] "°C" HEVC
+
+BO_ 1007 BMS_RN8: 7 BMS_HV
+ SG_ CRC_BMS_RN8 : 7|8@0+ (1,0) [0|255] "" HEVC
+ SG_ Clock_BMS_RN8 : 15|4@0+ (1,0) [0|15] "" HEVC
+ SG_ ChargingPower_v2 : 11|12@0+ (0.1,0) [0|400] "KW" HEVC
+ SG_ FastChargeRelayStatus : 31|1@0+ (1,0) [0|0] "" HEVC
+ SG_ OperatingTypeStatus : 30|4@0+ (1,0) [0|0] "" HEVC
+ SG_ BMS_InterlockHVChargerConnector : 26|2@0+ (1,0) [0|0] "" HEVC
+ SG_ BMS_InterlockHVChargerFuseLid : 39|2@0+ (1,0) [0|0] "" HEVC
+ SG_ HVBatHealth : 37|7@0+ (1,0) [0|126] "%" HEVC
+ SG_ BMS_FaultType : 46|3@0+ (1,0) [0|0] "" HEVC
+ SG_ HVBatHealth_v2 : 55|8@0+ (1,0) [0|254] "%" HEVC
+
+BO_ 1726 BMS_RN9: 8 BMS_HV
+ SG_ BMS_CellHighestVoltageID : 7|8@0+ (1,0) [0|255] "" HEVC
+ SG_ BMS_CellLowestVoltageID : 15|8@0+ (1,0) [0|255] "" HEVC
+ SG_ BMS_MaxTempProbeID : 23|8@0+ (1,0) [0|255] "" HEVC
+ SG_ BMS_MinTempProbeID : 31|8@0+ (1,0) [0|255] "" HEVC
+ SG_ Total_boost_time_BMS_to_HEVC : 39|18@0+ (1,0) [0|262143] "s" HEVC
+ SG_ BSOadaptationRequest : 48|1@0+ (1,0) [0|0] "" HEVC
+ SG_ HVBatResistiveStateOfHealth : 63|8@0+ (1,100) [100|354] "%" HEVC
+
+BO_ 328 CHG_CANHS_R_01: 6 OBC_AC
+ SG_ MainsRMSVoltage : 7|10@0+ (0.5,0) [0|500] "V" HEVC
+ SG_ MainsRMSCurrent : 8|9@0+ (0.1,0) [0|51] "A" HEVC
+ SG_ CHGDCVoltage : 31|13@0+ (0.1,0) [0|500] "V" HEVC
+ SG_ CHGDCInterlockState : 34|2@0+ (1,0) [0|0] "" HEVC
+ SG_ CHGMainsACInterlockState : 47|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 910 CHG_CANHS_R_02: 8 OBC_AC
+ SG_ CHGAvailableChargingPower_v2 : 7|10@0+ (0.05,0) [0|51] "kW" HEVC
+ SG_ CHGTemp : 13|7@0+ (1,0) [0|100] "%" HEVC
+ SG_ CHGLoadState : 38|3@0+ (1,0) [0|0] "" HEVC
+ SG_ CHGRefuseToSleep : 46|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 905 CHG_CANHS_R_03: 2 OBC_AC
+ SG_ CHG_FaultType : 7|3@0+ (1,0) [0|0] "" HEVC
+ SG_ CHG_ChargeFailureDisplay : 4|1@0+ (1,0) [0|0] "" HEVC
+ SG_ CHGWaterTemp_v2 : 3|6@0+ (2,-33) [-33|93] "°C" HEVC
+
+BO_ 251 DCDC_RN1: 4 DCDC_HV
+ SG_ DCDCHVNetworkVoltage_V2 : 7|13@0+ (0.1,0) [0|500] "V" HEVC
+ SG_ DCDCInputCurrent_v2 : 23|10@0+ (0.5,-250) [-250|250] "A" HEVC
+ SG_ DCDCInputPower : 29|6@0+ (0.1,0) [0|6] "kW" HEVC
+
+BO_ 899 DCDC_RN2: 8 DCDC_HV
+ SG_ DCDC_RefusetoSleep : 7|2@0+ (1,0) [0|0] "" HEVC
+ SG_ DCDC_Fault_Type : 5|3@0+ (1,0) [0|0] "" HEVC
+ SG_ DCDCState : 2|2@0+ (1,0) [0|0] "" HEVC
+ SG_ DCDC_MajorElecFailureDisplay : 0|1@0+ (1,0) [0|0] "" HEVC
+ SG_ DCDCCurrentOutput : 15|8@0+ (1,0) [0|254] "A" HEVC
+ SG_ DCDCWaterTemp : 23|8@0+ (1,-40) [-40|214] "°" HEVC
+ SG_ MaxCurrentAvailableBySystem : 31|8@0+ (1,0) [0|254] "A" HEVC
+ SG_ DCDC_ElecSysFailureDisplay : 37|1@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1157 ECM_SED_RN2: 5 HEVC
+ SG_ HVBatteryBlowerRequest_v2 : 39|7@0+ (1,0) [0|100] "%" ECUxx
+
+BO_ 241 HECM_RN1: 8 HECM
+ SG_ ICE_EngineRPM : 7|16@0+ (0.25,0) [0|16383] "Tr/min" HEVC
+ SG_ ICE_MeanEffectiveTorque_v2 : 23|10@0+ (1,-200) [-200|823] "Nm" HEVC
+ SG_ ICE_EngineStatus : 29|2@0+ (1,0) [0|0] "" HEVC
+ SG_ HECM_RN1_Clock : 27|4@0+ (1,0) [0|15] "" HEVC
+ SG_ HECM_RN1_CRC : 39|8@0+ (1,0) [0|255] "" HEVC
+ SG_ FastTorqueDelay : 47|8@0+ (0.005,0) [0|1] "s" HEVC
+ SG_ ICE_RiCloseLoopState : 59|2@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_EngineRPMValidity : 57|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1576 HECM_RN10: 5 HECM
+ SG_ ICE_IgnCycleCount : 7|16@0+ (1,0) [0|65535] "wu" HEVC
+ SG_ RefuelRelatedComponentFailure_HV : 22|1@0+ (1,0) [0|0] "" HEVC
+ SG_ PurgeFlowMonitorCompletion_HV : 21|1@0+ (1,0) [0|0] "" HEVC
+ SG_ PurgeFlowMonitorRunning_HV : 20|1@0+ (1,0) [0|0] "" HEVC
+ SG_ PurgeSystemFail_HV : 19|1@0+ (1,0) [0|0] "" HEVC
+ SG_ PurgeFlowMonitorFail_HV : 18|1@0+ (1,0) [0|0] "" HEVC
+ SG_ DifPresSenMonPermission_HV : 17|1@0+ (1,0) [0|0] "" HEVC
+ SG_ OBFCMfreeze_HECM : 16|1@0+ (1,0) [0|0] "" HEVC
+ SG_ IUPR_GeneralDenom_HV : 31|2@0+ (1,0) [0|0] "" HEVC
+ SG_ IUPR_ColdStartDenom_HV : 29|2@0+ (1,0) [0|0] "" HEVC
+ SG_ IUPR_EvapDenom_HV : 27|2@0+ (1,0) [0|0] "" HEVC
+ SG_ OBFCMreset_HECM : 25|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_DriveCycle : 39|1@0+ (1,0) [0|0] "" HEVC
+
+BO_ 243 HECM_RN3: 7 HECM
+ SG_ ICE_MinimumBasicICETorque_v2 : 7|10@0+ (1,-200) [-200|823] "Nm" HEVC
+ SG_ ICE_MaximumStaticTorque_v2 : 13|10@0+ (1,-200) [-200|823] "Nm" HEVC
+ SG_ ICE_MaxDynICETorqueAvailable_v2 : 19|10@0+ (1,-200) [-200|823] "Nm" HEVC
+ SG_ ICE_TorqueRequestStatus : 25|2@0+ (1,0) [0|0] "" HEVC
+ SG_ HECM_RN3_Clock : 39|4@0+ (1,0) [0|15] "" HEVC
+ SG_ ICE_DeactivationStatus : 35|2@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_CrankingAuthorization_ECM : 33|2@0+ (1,0) [0|0] "" HEVC
+ SG_ HECM_RN3_CRC : 47|8@0+ (1,0) [0|255] "" HEVC
+
+BO_ 244 HECM_RN4: 8 HECM
+ SG_ ICE_IdleSpeedCtrlInternalReq_v2 : 7|8@0+ (32,0) [0|8128] "rpm" HEVC
+ SG_ ICE_MaxEngineSpeedRequest : 15|8@0+ (32,0) [0|8128] "rpm" HEVC
+ SG_ ICE_MaxTorqueRiClosedLoop_v2 : 23|10@0+ (1,-200) [-200|823] "Nm" HEVC
+ SG_ ICE_IdleSpeedStatus : 27|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_CoolantZeroFlowInhibition : 26|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_EngineStopPermission : 25|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_EngTorqueLoss_v2 : 24|9@0+ (0.5,0) [0|200] "Nm" HEVC
+ SG_ MaxTargetTorqueAccelGradient : 51|10@0+ (10,0) [0|10000] "Nm/s" HEVC
+
+BO_ 887 HECM_RN5: 8 HECM
+ SG_ ICE_EngineCoolantTemp : 7|8@0+ (1,-40) [-40|214] "°C" HEVC
+ SG_ ICE_AtmoPressure : 15|10@0+ (0.1,10) [10|110] "kPa" HEVC
+ SG_ ICE_CAV_Diagnosis : 21|3@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_CAV_Position_FeedBack : 18|3@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_EngineFanSpeedRequestPWM_ECM : 31|7@0+ (1,0) [0|100] "%" HEVC
+ SG_ ICE_FillerCapIndicatorONRequest : 24|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_MILLamp : 39|4@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_CAV_Init_FeedBack : 35|2@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_EngineCoolantTempFailure : 33|2@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_CoefEngineTorqueModification : 47|8@0+ (0.8,0) [0|200] "%" HEVC
+ SG_ ICE_StopAutoForbidden : 55|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_RevUpReqHighEngOilTemp : 54|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_MinimumVoltagebyECM_v2 : 53|3@0+ (0.5,12) [12|15] "V" HEVC
+ SG_ ICE_EngineSpecificPhaseType : 50|3@0+ (1,0) [0|0] "" HEVC
+ SG_ PurgeValve2Command_HV : 63|8@0+ (0.5,0) [0|100] "%" HEVC
+
+BO_ 889 HECM_RN6: 8 HECM
+ SG_ ICE_ComputedOilDrainingRange : 7|16@0+ (1,0) [0|65534] "km" HEVC
+ SG_ ICE_NominalFuelConsumption : 23|8@0+ (80,0) [0|20400] "mm3" HEVC
+ SG_ ICE_FuelConsumption : 31|8@0+ (80,0) [0|20400] "mm3" HEVC
+ SG_ TankDepressurizationAuthoriz_HV : 39|1@0+ (1,0) [0|0] "" HEVC
+ SG_ BypassValveRequest_HV : 38|1@0+ (1,0) [0|0] "" HEVC
+ SG_ TankClosedValveRequest_HV : 37|1@0+ (1,0) [0|0] "" HEVC
+ SG_ PurgeControlAuthorization_HV : 36|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_OilPressureWarning_ECM : 35|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_WarningWaterTemp : 34|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_EngineControlFailureLevel1 : 33|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_EngineControlFailureLevel2 : 32|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_ECM_VerlogStatus : 45|2@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_ECM_OilPressureSWfaultDisp : 43|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_ManualPartFilterRegeStatus : 42|2@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_SpecificMaxEngineRPM : 55|8@0+ (32,0) [0|8128] "rpm" HEVC
+ SG_ ICE_SpecificMinEngineRPM : 63|8@0+ (32,0) [0|8128] "rpm" HEVC
+
+BO_ 871 HECM_RN7: 8 HECM
+ SG_ ICE_IntakeAirTemperature : 7|8@0+ (1,-50) [-50|204] "°C" HEVC
+ SG_ ICE_FaultType : 31|4@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_OBD_Ready_On : 27|1@0+ (1,0) [0|0] "" HEVC
+ SG_ DrainCutValveRequest_HV : 26|1@0+ (1,0) [0|0] "" HEVC
+ SG_ LeakDetectionPumpRequest_HV : 25|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_EngNoLoadReq : 36|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_EngNoLoadReq_2 : 35|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_OBDPrmtDelCdn : 34|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_OBDWarmUpCycleDet : 33|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_StartEngineRequest : 32|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_EngineWaterPumpStatus : 47|5@0+ (5,0) [0|100] "%" HEVC
+ SG_ ICE_EngineAbsoluteLoad : 41|16@0+ (0.39,0) [0|25700] "%" HEVC
+
+BO_ 252 HECM_RN8: 8 HECM
+ SG_ ICE_ClutchEngageEnable : 7|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_FuelCutCylinderNo : 6|3@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_FirstIgnitionExperience : 3|1@0+ (1,0) [0|0] "" HEVC
+ SG_ MaxTargetTorqueDecelGradient : 2|10@0+ (10,-10000) [-10000|0] "Nm/s" HEVC
+ SG_ ICE_VTCIntermediateLockStatus : 21|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_CombustionAssistMode : 20|2@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_StarterEngineStartFeedBack : 18|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_Fuelcutprohibitrequest : 17|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_VoltageRateByECM : 31|3@0+ (1,0) [0|0] "" HEVC
+ SG_ ICE_SpecificMaxEngineTorque : 28|10@0+ (1,-200) [-200|823] "Nm" HEVC
+ SG_ ICE_SpecificMinEngineTorque : 33|10@0+ (1,-200) [-200|823] "Nm" HEVC
+ SG_ ICE_EngineRPMDisplay : 55|16@0+ (0.125,0) [0|8191.75] "rpm" HEVC
+
+BO_ 1257 HECM_RN9: 2 HECM
+ SG_ ICE_EngineCalculatedLoad : 7|9@0+ (0.39,0) [0|100] "%" HEVC
+ SG_ PurgeFlowCompletion_HV : 13|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 238 HEVC_RN1: 8 HEVC
+ SG_ ICE_EffectiveSlowTorqueReq_v2 : 7|10@0+ (1,-200) [-200|823] "Nm" ECUxx
+ SG_ ICE_EngineFuelCutType : 13|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ ICE_EffectiveFastTorqueReq_v2 : 11|10@0+ (1,-200) [-200|823] "Nm" ECUxx
+ SG_ ICE_TransmRangeEngagedCurrent : 31|4@0+ (1,0) [0|0] "" ECUxx
+ SG_ ICE_TransmRangeEngagedTarget : 27|4@0+ (1,0) [0|0] "" ECUxx
+ SG_ ICE_RawSensor : 39|10@0+ (0.125,0) [0|125] "%" ECUxx
+ SG_ ICE_StartAutoRequest : 45|3@0+ (1,0) [0|0] "" ECUxx
+ SG_ ICE_StopAutoRequest : 42|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ ICE_CurativeAntiJerkActivation : 41|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ ICE_EngineFullLoadRequest : 55|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ ICE_EngineStopAnnouncement : 54|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ ICE_SystemReadyStatus : 53|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ ICE_IdleSpeedRequest : 52|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ HEVC_RN1_Clock : 51|4@0+ (1,0) [0|15] "" ECUxx
+ SG_ HEVC_RN1_CRC : 63|8@0+ (1,0) [0|255] "" ECUxx
+
+BO_ 1528 HEVC_RN10: 4 HEVC
+ SG_ VehicleID_HV : 7|32@0+ (1,0) [0|0] "" ECUxx
+
+BO_ 375 HEVC_RN11: 8 HEVC
+ SG_ CRC_HEVC_RN11 : 7|8@0+ (1,0) [0|255] "" ECUxx
+ SG_ Clock_HEVC_RN11 : 15|4@0+ (1,0) [0|15] "" ECUxx
+ SG_ MaxHSGgeneratorPowerForGearshift : 23|9@0+ (0.25,-100) [-100|0] "KW" ECUxx
+ SG_ MaxHSGmotorPowerForGearShift : 30|9@0+ (0.25,0) [0|100] "KW" ECUxx
+ SG_ MaxMEgeneratorPowerForGearshift : 37|9@0+ (0.25,-100) [-100|0] "KW" ECUxx
+ SG_ MaxMEmotorPowerforGearshift : 44|9@0+ (0.25,0) [0|100] "KW" ECUxx
+ SG_ ICE_AcceleratorPedalPositionE : 49|10@0+ (0.125,0) [0|125] "%" ECUxx
+
+BO_ 1088 HEVC_RN12: 8 HEVC
+ SG_ VDC_MILlamp_HV : 4|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ EBA_MILlamp_HV : 3|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ EVAP_EngineStartAutoRequest_HV : 2|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ EVAP_MILlamp_HV : 1|2@0+ (1,0) [0|0] "" ECUxx
+ SG_ ME_RisolCheckModeRequest : 11|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ PowerRelayState : 10|3@0+ (1,0) [0|0] "" ECUxx
+ SG_ CRC_HEVC_RN12 : 23|8@0+ (1,0) [0|255] "" ECUxx
+ SG_ Clock_HEVC_RN12 : 31|4@0+ (1,0) [0|15] "" ECUxx
+ SG_ ICE_EngineWaterPumpRequest : 27|5@0+ (1.25,0) [0|25] "L/min" ECUxx
+ SG_ EVAPmodeStatus_HV_v2 : 38|2@0+ (1,0) [0|0] "" ECUxx
+ SG_ CanisterPressureSensor_HV : 36|12@0+ (0.2,600) [600|1067] "mBar" ECUxx
+ SG_ EvapLeakMonitorDenomIncrement_HV : 40|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ FuelTempSensor_HV : 55|8@0+ (1,-50) [-50|205] "°C" ECUxx
+ SG_ BatteryVoltage12V_HV : 63|8@0+ (0.06,6) [6|18] "V" ECUxx
+
+BO_ 1230 HEVC_RN13: 8 HEVC
+ SG_ OperatingTypeRequest : 7|3@0+ (1,0) [0|0] "" ECUxx
+ SG_ TankPressureSensorv2_HV : 4|11@0+ (0.5,-300) [-300|500] "mBar" ECUxx
+ SG_ EvapoLeakCheckPressure_HV : 9|10@0+ (0.895,600) [600|1100] "mBar" ECUxx
+ SG_ AbsoluteTankPressureSensor_HV : 31|10@0+ (2.6,133) [133|2000] "mBar" ECUxx
+ SG_ TankGrossLeakMaxLimit_HV : 36|16@0+ (1,0) [0|65535] "" ECUxx
+ SG_ Clock_HEVC_RN13 : 51|4@0+ (1,0) [0|15] "" ECUxx
+ SG_ CRC_HEVC_RN13 : 63|8@0+ (1,0) [0|255] "" ECUxx
+
+BO_ 1718 HEVC_RN14: 8 HEVC
+ SG_ GrossLeakTestResult_HV : 7|16@0+ (1,0) [0|65535] "" ECUxx
+ SG_ GrossLeakMaxLimit_HV : 23|16@0+ (1,0) [0|65535] "" ECUxx
+ SG_ TankLeakTestResult_HV : 39|16@0+ (1,0) [0|65535] "" ECUxx
+ SG_ GrossLeakMinLimit_HV : 55|16@0+ (1,0) [0|65535] "" ECUxx
+
+BO_ 1719 HEVC_RN15: 8 HEVC
+ SG_ TankLeakMinLimit_HV : 7|16@0+ (1,0) [0|65535] "" ECUxx
+ SG_ TankLeakMaxLimit_HV : 23|16@0+ (1,0) [0|65535] "" ECUxx
+ SG_ TankGrossLeakTestResult_HV : 39|16@0+ (1,0) [0|65535] "" ECUxx
+ SG_ TankGrossLeakMinLimit_HV : 55|16@0+ (1,0) [0|65535] "" ECUxx
+
+BO_ 1727 HEVC_RN17: 3 HEVC
+ SG_ Total_boost_time_HEVC_to_BMS : 7|18@0+ (1,0) [0|262143] "s" ECUxx
+
+BO_ 324 HEVC_RN18: 1 HEVC
+ SG_ DCDCVoltageRegulation_v3 : 7|8@0+ (0.025,10.8) [10.8|16] "V" ECUxx
+
+BO_ 1617 HEVC_RN19: 1 HEVC
+ SG_ PurgeFlowMonitorPermission_HV : 7|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ BypassValveStatus_HV : 6|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ ELCMvalveStatus_HV : 5|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ OBFCMfreeze_HEVC : 4|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ OBFCMreset_HEVC : 3|1@0+ (1,0) [0|0] "" ECUxx
+
+BO_ 239 HEVC_RN2: 8 HEVC
+ SG_ ME_TorqueRequest : 7|13@0+ (0.1,-250) [-250|250] "Nm" ECUxx
+ SG_ ME_ControlMode : 10|3@0+ (1,0) [0|0] "" ECUxx
+ SG_ ME_SpeedRequest : 23|12@0+ (10,-20000) [-20000|20000] "rpm" ECUxx
+ SG_ HEVC_RN2_Clock : 27|4@0+ (1,0) [0|15] "" ECUxx
+ SG_ HEVC_RN2_CRC : 39|8@0+ (1,0) [0|255] "" ECUxx
+ SG_ DCDCVoltageRegulation_v2 : 47|8@0+ (0.025,11.7) [11.7|16] "V" ECUxx
+ SG_ HVCurrentRequest : 55|11@0+ (0.1,0) [0|204.6] "A" ECUxx
+ SG_ B_PEBDischarge_sch_req : 60|2@0+ (1,0) [0|0] "" ECUxx
+ SG_ CHGcontrolPilotState : 58|3@0+ (1,0) [0|0] "" ECUxx
+
+BO_ 240 HEVC_RN3: 8 HEVC
+ SG_ HSG_TorqueRequest : 7|13@0+ (0.1,-250) [-250|250] "Nm" ECUxx
+ SG_ HSG_ControlMode : 10|3@0+ (1,0) [0|0] "" ECUxx
+ SG_ HSG_SpeedRequest : 23|12@0+ (10,-20000) [-20000|20000] "rpm" ECUxx
+ SG_ HEVC_RN3_Clock : 27|4@0+ (1,0) [0|15] "" ECUxx
+ SG_ HEVC_RN3_CRC : 39|8@0+ (1,0) [0|255] "" ECUxx
+ SG_ ME_InverterActivation_v2 : 47|3@0+ (1,0) [0|0] "" ECUxx
+ SG_ ME_CurativeAntiJerkActivation : 41|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ MotorDryingRequest : 40|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ ME_CurativeAntiJerkGain : 55|8@0+ (0.005,0) [0|1] "" ECUxx
+ SG_ ME_CurativeAntiJerkTime : 63|8@0+ (0.005,0) [0|1] "s" ECUxx
+
+BO_ 883 HEVC_RN4: 8 HEVC
+ SG_ HEVC_WakeUpSleepCommand : 7|2@0+ (1,0) [0|0] "" ECUxx
+ SG_ TankDepressurizationStatus_HV : 5|3@0+ (1,0) [0|0] "" ECUxx
+ SG_ HSG_InverterActivation : 2|3@0+ (1,0) [0|0] "" ECUxx
+ SG_ DCDCActivation : 15|2@0+ (1,0) [0|0] "" ECUxx
+ SG_ ICE_FillerCapIndicatorResetStatus : 13|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ PurgeOpenLoopRequest_HV : 10|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ ETS_SleepMode : 9|2@0+ (1,0) [0|0] "" ECUxx
+ SG_ LBCPRUNKey : 23|8@0+ (1,0) [0|0] "" ECUxx
+ SG_ LBCPRUNKey_RCY : 31|8@0+ (1,0) [0|0] "" ECUxx
+ SG_ EVAP_FaultType_HV : 39|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ EvapLeakNotExist_HV : 38|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ ICE_FuelLevelDisplayed : 47|7@0+ (1,0) [0|80] "L" ECUxx
+ SG_ IgnitionSupplyConfirmation_HV : 40|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ ICE_RawFuelGaugeResistance : 55|10@0+ (1,0) [0|1022] "Ohm" ECUxx
+ SG_ CHGStateRequest : 61|3@0+ (1,0) [0|0] "" ECUxx
+ SG_ GADE_HV : 58|3@0+ (1,0) [0|0] "" ECUxx
+
+BO_ 885 HEVC_RN5: 8 HEVC
+ SG_ HEVC_MILLamp : 7|2@0+ (1,0) [0|0] "" ECUxx
+ SG_ CAV_Position_Request_HV : 3|3@0+ (1,0) [0|0] "" ECUxx
+ SG_ CAV_Init_Request_HV : 0|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ ExternalTemp_HV : 15|8@0+ (1,-40) [-40|214] "°C" ECUxx
+ SG_ DiagnosedFuelLow_HV : 23|2@0+ (1,0) [0|0] "" ECUxx
+ SG_ EvapLeakDetected_HV : 21|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ OilChangeCounterReset_HV : 20|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ ICE_NoLoadExecution : 19|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ ICE_CompressionCheck : 17|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ RefuelingStatus_HV : 16|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ InverterChargeRequest : 31|2@0+ (1,0) [0|0] "" ECUxx
+ SG_ ICE_FuelGauge : 29|10@0+ (1,0) [0|1022] "" ECUxx
+ SG_ BrakeInfoStatus_HV : 35|3@0+ (1,0) [0|0] "" ECUxx
+ SG_ FuelFillerCapStatus_HV : 32|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ NextMissionTempEstimation : 47|7@0+ (1,-50) [-50|70] "°C" ECUxx
+ SG_ EvapLeakMonitorNumerIncrement_HV : 40|1@0+ (1,0) [0|0] "" ECUxx
+
+BO_ 886 HEVC_RN6: 8 HEVC
+ SG_ AbsoluteTimeSince1rstIgn_HV : 7|24@0+ (1,0) [0|1.677e+007] "mn" ECUxx
+ SG_ DistanceTotalizer_HV : 31|28@0+ (0.01,0) [0|2.6e+006] "km" ECUxx
+ SG_ BatteryZeroAmpereStatus : 51|2@0+ (1,0) [0|0] "" ECUxx
+ SG_ BatteryManagementMode : 49|2@0+ (1,0) [0|0] "" ECUxx
+ SG_ ETSCoolantFlow : 63|7@0+ (0.2,0) [0|20] "l/min" ECUxx
+ SG_ CanisterPurgeAuthorization_HV : 56|1@0+ (1,0) [0|0] "" ECUxx
+
+BO_ 306 HEVC_RN7: 8 HEVC
+ SG_ HSG_SafetyMinTorque : 7|9@0+ (0.5,-254) [-254|0] "Nm" ECUxx
+ SG_ HSG_SafetyMaxTorque : 14|9@0+ (0.5,0) [0|254] "Nm" ECUxx
+ SG_ ME_SafetyMinTorque : 21|9@0+ (0.5,-254) [-254|0] "Nm" ECUxx
+ SG_ ME_SafetyMaxTorque : 28|9@0+ (0.5,0) [0|254] "Nm" ECUxx
+ SG_ HEVC_RN7_Clock : 35|4@0+ (1,0) [0|15] "" ECUxx
+ SG_ HEVC_RN7_CRC : 47|8@0+ (1,0) [0|255] "" ECUxx
+ SG_ ME_DeactivationRequest : 55|4@0+ (1,0) [0|0] "" ECUxx
+ SG_ HSG_DeactivationRequest_ : 51|4@0+ (1,0) [0|0] "" ECUxx
+
+BO_ 307 HEVC_RN8: 8 HEVC
+ SG_ ICE_SafetyMinTorque : 7|9@0+ (0.5,-254) [-254|0] "Nm" ECUxx
+ SG_ ICE_SafetyMaxTorque : 14|9@0+ (0.5,0) [0|254] "Nm" ECUxx
+ SG_ HEVC_RN8_Clock : 21|4@0+ (1,0) [0|15] "" ECUxx
+ SG_ HEVC_RN8_CRC : 31|8@0+ (1,0) [0|255] "" ECUxx
+ SG_ ICE_PowerTrainSetPoint : 39|10@0+ (0.125,0) [0|125] "%" ECUxx
+ SG_ ICE_DeactivationRequest : 45|2@0+ (1,0) [0|0] "" ECUxx
+ SG_ RESstatus_HV : 43|4@0+ (1,0) [0|0] "" ECUxx
+ SG_ VehicleSpeed_HV : 55|16@0+ (0.01,0) [0|655.34] "km/h" ECUxx
+
+BO_ 253 HEVC_RN9: 8 HEVC
+ SG_ CRC_HEVC_RN9 : 7|8@0+ (1,0) [0|255] "" ECUxx
+ SG_ Clock_HEVC_RN9 : 15|4@0+ (1,0) [0|15] "" ECUxx
+ SG_ ICE_EngineTorqueUpReq : 11|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ HSG_CurativeAntiJerkGain : 23|8@0+ (0.005,0) [0|1] "wu" ECUxx
+ SG_ ICE_TargetIdleSpeedMaxLimit_v2 : 31|8@0+ (32,0) [0|8128] "rpm" ECUxx
+ SG_ ICE_TargetIdleSpeedMinLimit_v2 : 39|8@0+ (32,0) [0|8128] "rpm" ECUxx
+ SG_ CHGMaxACCurrent_v2 : 47|9@0+ (0.1,0) [0|51] "A" ECUxx
+ SG_ ICE_EngineDriven : 54|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ ICE_NeutSw : 53|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ ICE_EngineStopIGOFF : 51|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ ICE_VTCIntermediateLockRequest : 50|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ HSG_CurativeAntiJerkActivation : 48|1@0+ (1,0) [0|0] "" ECUxx
+ SG_ HSG_CurativeAntiJerkTime : 63|8@0+ (0.005,0) [0|1] "s" ECUxx
+
+BO_ 1589 HEV_WakeUpFrame: 2 HEVC
+ SG_ HEV_WakeUp_Signal : 7|16@0+ (1,0) [0|0] "" ECUxx
+
+BO_ 247 INV_HSG_RN1: 7 INV_HSG
+ SG_ HSG_ElecMachineSpeed : 7|12@0+ (10,-20000) [-20000|20000] "rpm" HEVC
+ SG_ INV_HSG_RN1_Clock : 11|4@0+ (1,0) [0|15] "" HEVC
+ SG_ INV_HSG_RN1_CRC : 23|8@0+ (1,0) [0|255] "" HEVC
+ SG_ HSG_ElecMachineTorqueEstimation : 31|10@0+ (0.5,-255) [-255|250] "Nm" HEVC
+ SG_ HSG_ElecMAchineWorkingMode : 37|2@0+ (1,0) [0|0] "" HEVC
+ SG_ HSG_ElecMachineMaxMotorTorque_v2 : 35|10@0+ (0.5,-255) [-255|254] "Nm" HEVC
+ SG_ HSG_ElecMachineMaxGenTorque_v2 : 41|9@0+ (0.5,0) [0|250] "Nm" HEVC
+
+BO_ 249 INV_HSG_RN2: 8 INV_HSG
+ SG_ HSG_InverterCurrent : 7|11@0+ (0.5,-400) [-400|400] "A" HEVC
+ SG_ HSG_ElecMachineMaxPower_v2 : 12|7@0+ (0.25,0) [0|25] "kW" HEVC
+ SG_ HSG_DeactivationStatus : 21|2@0+ (1,0) [0|0] "" HEVC
+ SG_ HSG_InterlockHVConnector : 19|2@0+ (1,0) [0|0] "" HEVC
+ SG_ HSG_InterlockMotor : 17|2@0+ (1,0) [0|0] "" HEVC
+ SG_ HSG_ControlModeStatus : 34|2@0+ (1,0) [0|0] "" HEVC
+ SG_ HSG_ElecMachineAccel : 32|9@0+ (200,-50000) [-50000|50000] "rpm/s" HEVC
+ SG_ Clock_INV_HSG_RN2 : 51|4@0+ (1,0) [0|15] "" HEVC
+ SG_ CRC_INV_HSG_RN2 : 63|8@0+ (1,0) [0|255] "" HEVC
+
+BO_ 895 INV_HSG_RN3: 8 INV_HSG
+ SG_ HSG_RefusetoSleep : 7|2@0+ (1,0) [0|0] "" HEVC
+ SG_ HSG_ElecMachineTemp : 4|13@0+ (0.02,0) [0|100] "%" HEVC
+ SG_ HSG_InverterFault_Type : 23|3@0+ (1,0) [0|0] "" HEVC
+ SG_ HSG_ElecPowerTrainMngtState : 20|3@0+ (1,0) [0|0] "" HEVC
+ SG_ HSG_VerlogStatus : 17|2@0+ (1,0) [0|0] "" HEVC
+ SG_ HSG_ElecSysFailureDisplay : 31|1@0+ (1,0) [0|0] "" HEVC
+ SG_ HSG_ElecMotorFailureDisplay : 30|1@0+ (1,0) [0|0] "" HEVC
+ SG_ HSG_MajorElecFailureDisplay : 29|1@0+ (1,0) [0|0] "" HEVC
+ SG_ HSG_InverterTemp : 28|13@0+ (0.02,0) [0|100] "%" HEVC
+ SG_ HSG_InterlockFuseLid : 63|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 245 INV_ME_RN1: 8 INV_ME
+ SG_ ElecMachineSpeed_HV : 7|12@0+ (10,-20000) [-20000|20000] "rpm" HEVC
+ SG_ INV_ME_RN1_Clock : 11|4@0+ (1,0) [0|15] "" HEVC
+ SG_ INV_ME_RN1_CRC : 23|8@0+ (1,0) [0|255] "" HEVC
+ SG_ ME_ElecMachineTorqueEstimation : 31|10@0+ (0.5,-250) [-250|250] "Nm" HEVC
+ SG_ ElecMAchineWorkingMode : 37|2@0+ (1,0) [0|0] "" HEVC
+ SG_ ElecMachineMaxMotorTorque_v2 : 35|10@0+ (0.5,-255) [-255|254] "Nm" HEVC
+ SG_ ME_DeactivationStatus : 41|2@0+ (1,0) [0|0] "" HEVC
+ SG_ InverterHVNetworkVoltage : 55|13@0+ (0.1,0) [0|500] "V" HEVC
+ SG_ ME_RisolCheckModeStatus : 58|1@0+ (1,0) [0|0] "" HEVC
+
+BO_ 246 INV_ME_RN2: 8 INV_ME
+ SG_ InverterCurrent : 15|11@0+ (0.5,-400) [-400|400] "A" HEVC
+ SG_ PEBActiveDischarge : 20|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ME_InterlockHVaccessories : 29|2@0+ (1,0) [0|0] "" HEVC
+ SG_ ElecMachineMaxPower_v3 : 43|10@0+ (0.25,0) [0|255] "kW" HEVC
+ SG_ ME_ControlModeStatus : 57|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 894 INV_ME_RN3: 8 INV_ME
+ SG_ ME_RefuseToSleep : 7|2@0+ (1,0) [0|0] "" HEVC
+ SG_ ME_ChargeFailureDisplay : 5|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ElecMachineTemp : 4|13@0+ (0.02,0) [0|100] "%" HEVC
+ SG_ ME_InverterFault_Type : 23|3@0+ (1,0) [0|0] "" HEVC
+ SG_ InverterChargeState : 16|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ME_InterlockMotor : 31|2@0+ (1,0) [0|0] "" HEVC
+ SG_ ElecPowerTrainMngtState : 39|3@0+ (1,0) [0|0] "" HEVC
+ SG_ InverterTemp : 36|13@0+ (0.02,0) [0|100] "%" HEVC
+ SG_ ME_VerlogStatus : 55|2@0+ (1,0) [0|0] "" HEVC
+ SG_ ME_ElecSysFailureDisplay : 53|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ME_ElecMotorFailureDisplay : 52|1@0+ (1,0) [0|0] "" HEVC
+ SG_ ME_MajorElecFailureDisplay : 51|1@0+ (1,0) [0|0] "" HEVC
+ SG_ PEBWaterTemp : 63|8@0+ (1,-40) [-40|214] "°C" HEVC
+
+BO_ 269 INV_ME_RN5: 4 INV_ME
+ SG_ INV_ME_RN5_CRC : 7|8@0+ (1,0) [0|255] "" HEVC
+ SG_ INV_ME_RN5_Clock : 15|4@0+ (1,0) [0|15] "" HEVC
+ SG_ ElecMachineMaxGenTorque_v2 : 11|9@0+ (0.5,0) [0|254] "Nm" HEVC
+ SG_ ME_ElecMachineAccel : 18|9@0+ (100,-25000) [-25000|25000] "rpm/s" HEVC
+
+BO_ 1646 INV_ME_RN6: 2 INV_ME
+ SG_ ME_StatorTemp : 7|8@0+ (1,-40) [-40|215] "°C" HEVC
+ SG_ ME_RotorTemp : 15|8@0+ (1,-40) [-40|215] "°C" HEVC
+
+BO_ 41 RECT_RN1: 6 RECT
+ SG_ PowerFactor : 7|8@0+ (0.005,0) [0|1] "wu" HEVC
+ SG_ LeakageCurrentEmergencyStop : 15|2@0+ (1,0) [0|0] "" HEVC
+ SG_ NumberOfPhasesUsed : 13|2@0+ (1,0) [0|0] "" HEVC
+ SG_ CHG_InterlockFuseLid : 11|2@0+ (1,0) [0|0] "" HEVC
+ SG_ CHG_InterlockHVaccessories : 9|2@0+ (1,0) [0|0] "" HEVC
+ SG_ CHG_InterlockHVaccessories2 : 23|2@0+ (1,0) [0|0] "" HEVC
+ SG_ Clock_RECT_RN1 : 19|4@0+ (1,0) [0|15] "" HEVC
+ SG_ CRC_RECT_RN1 : 31|8@0+ (1,0) [0|255] "" HEVC
+ SG_ EarthResistanceValue : 39|10@0+ (1,0) [0|1020] "Ohm" HEVC
+
+BO_TX_BU_ 328 : OBC_AC,RECT;
+BO_TX_BU_ 910 : OBC_AC,RECT;
+BO_TX_BU_ 905 : OBC_AC,RECT;
+BO_TX_BU_ 251 : DCDC_HV,INV_ME;
+BO_TX_BU_ 899 : DCDC_HV,INV_ME;
+
+
+CM_ "";
+BA_DEF_ BO_ "CycleTime" INT 0 10000;
+BA_DEF_ BO_ "FrameType" STRING;
+BA_DEF_DEF_ "CycleTime" 100;
+BA_DEF_DEF_ "FrameType" "-";
+BA_ "CycleTime" BO_ 876 100;
+BA_ "FrameType" BO_ 876 "Periodic";
+BA_ "CycleTime" BO_ 903 500;
+BA_ "FrameType" BO_ 903 "Periodic and Event";
+BA_ "CycleTime" BO_ 1198 3000;
+BA_ "FrameType" BO_ 1198 "Periodic";
+BA_ "CycleTime" BO_ 1199 3000;
+BA_ "FrameType" BO_ 1199 "Periodic";
+BA_ "CycleTime" BO_ 248 10;
+BA_ "FrameType" BO_ 248 "Periodic";
+BA_ "CycleTime" BO_ 1554 1000;
+BA_ "FrameType" BO_ 1554 "Periodic";
+BA_ "CycleTime" BO_ 897 100;
+BA_ "FrameType" BO_ 897 "Periodic";
+BA_ "CycleTime" BO_ 898 100;
+BA_ "FrameType" BO_ 898 "Periodic";
+BA_ "CycleTime" BO_ 882 500;
+BA_ "FrameType" BO_ 882 "Periodic";
+BA_ "CycleTime" BO_ 904 500;
+BA_ "FrameType" BO_ 904 "Periodic and Event";
+BA_ "CycleTime" BO_ 1007 100;
+BA_ "FrameType" BO_ 1007 "Periodic and Event";
+BA_ "CycleTime" BO_ 1726 1000;
+BA_ "FrameType" BO_ 1726 "Periodic and Event";
+BA_ "CycleTime" BO_ 328 10;
+BA_ "FrameType" BO_ 328 "Periodic";
+BA_ "CycleTime" BO_ 910 100;
+BA_ "FrameType" BO_ 910 "Periodic";
+BA_ "CycleTime" BO_ 905 500;
+BA_ "FrameType" BO_ 905 "Periodic and Event";
+BA_ "CycleTime" BO_ 251 10;
+BA_ "FrameType" BO_ 251 "Periodic";
+BA_ "CycleTime" BO_ 899 100;
+BA_ "FrameType" BO_ 899 "Periodic and Event";
+BA_ "CycleTime" BO_ 1157 100;
+BA_ "FrameType" BO_ 1157 "Periodic and Event";
+BA_ "CycleTime" BO_ 241 10;
+BA_ "FrameType" BO_ 241 "Periodic";
+BA_ "CycleTime" BO_ 1576 3000;
+BA_ "FrameType" BO_ 1576 "Periodic and Event";
+BA_ "CycleTime" BO_ 243 10;
+BA_ "FrameType" BO_ 243 "Periodic";
+BA_ "CycleTime" BO_ 244 10;
+BA_ "FrameType" BO_ 244 "Periodic";
+BA_ "CycleTime" BO_ 887 100;
+BA_ "FrameType" BO_ 887 "Periodic";
+BA_ "CycleTime" BO_ 889 100;
+BA_ "FrameType" BO_ 889 "Periodic and Event";
+BA_ "CycleTime" BO_ 871 100;
+BA_ "FrameType" BO_ 871 "Periodic";
+BA_ "CycleTime" BO_ 252 10;
+BA_ "FrameType" BO_ 252 "Periodic";
+BA_ "CycleTime" BO_ 1257 100;
+BA_ "FrameType" BO_ 1257 "Periodic";
+BA_ "CycleTime" BO_ 238 10;
+BA_ "FrameType" BO_ 238 "Periodic";
+BA_ "CycleTime" BO_ 1528 1000;
+BA_ "FrameType" BO_ 1528 "Periodic";
+BA_ "CycleTime" BO_ 375 10;
+BA_ "FrameType" BO_ 375 "Periodic";
+BA_ "CycleTime" BO_ 1088 100;
+BA_ "FrameType" BO_ 1088 "Periodic";
+BA_ "CycleTime" BO_ 1230 100;
+BA_ "FrameType" BO_ 1230 "Periodic";
+BA_ "CycleTime" BO_ 1718 3000;
+BA_ "FrameType" BO_ 1718 "Periodic and Event";
+BA_ "CycleTime" BO_ 1719 3000;
+BA_ "FrameType" BO_ 1719 "Periodic and Event";
+BA_ "CycleTime" BO_ 1727 1000;
+BA_ "FrameType" BO_ 1727 "Periodic";
+BA_ "CycleTime" BO_ 324 10;
+BA_ "FrameType" BO_ 324 "Periodic";
+BA_ "CycleTime" BO_ 1617 3000;
+BA_ "FrameType" BO_ 1617 "Periodic and Event";
+BA_ "CycleTime" BO_ 239 10;
+BA_ "FrameType" BO_ 239 "Periodic";
+BA_ "CycleTime" BO_ 240 10;
+BA_ "FrameType" BO_ 240 "Periodic";
+BA_ "CycleTime" BO_ 883 100;
+BA_ "FrameType" BO_ 883 "Periodic and Event";
+BA_ "CycleTime" BO_ 885 100;
+BA_ "FrameType" BO_ 885 "Periodic";
+BA_ "CycleTime" BO_ 886 100;
+BA_ "FrameType" BO_ 886 "Periodic";
+BA_ "CycleTime" BO_ 306 10;
+BA_ "FrameType" BO_ 306 "Periodic";
+BA_ "CycleTime" BO_ 307 10;
+BA_ "FrameType" BO_ 307 "Periodic";
+BA_ "CycleTime" BO_ 253 10;
+BA_ "FrameType" BO_ 253 "Periodic";
+BA_ "FrameType" BO_ 1589 "Event";
+BA_ "CycleTime" BO_ 247 10;
+BA_ "FrameType" BO_ 247 "Periodic";
+BA_ "CycleTime" BO_ 249 10;
+BA_ "FrameType" BO_ 249 "Periodic";
+BA_ "CycleTime" BO_ 895 100;
+BA_ "FrameType" BO_ 895 "Periodic and Event";
+BA_ "CycleTime" BO_ 245 10;
+BA_ "FrameType" BO_ 245 "Periodic";
+BA_ "CycleTime" BO_ 246 10;
+BA_ "FrameType" BO_ 246 "Periodic";
+BA_ "CycleTime" BO_ 894 100;
+BA_ "FrameType" BO_ 894 "Periodic and Event";
+BA_ "CycleTime" BO_ 269 10;
+BA_ "FrameType" BO_ 269 "Periodic";
+BA_ "CycleTime" BO_ 1646 3000;
+BA_ "FrameType" BO_ 1646 "Periodic and Event";
+BA_ "CycleTime" BO_ 41 100;
+BA_ "FrameType" BO_ 41 "Periodic and Event";
+VAL_ 876 BMS2_RefusetoSleep 0 "reserved" 1 "LBC refuse to sleep " 2 "LBC ready to sleep" 3 "reserved";
+VAL_ 876 HVPowerConnection_RCY 0 "Not used" 1 "Closing of Power Contacts Allowed" 2 "Closing of Power Contacts Not Allowed" 3 "Unavailable Value";
+VAL_ 876 BMS2_FaultType 0 "No failure" 1 "Reserved for safety" 2 "Reserved for safety" 3 "High Voltage battery level 1 failure" 4 "Reserved for safety" 5 "Safety mode 1 flag" 6 "High Voltage battery level 2 failure" 7 "Reserved for safety";
+VAL_ 876 OperatingTypeStatus_RCY 0 "No request" 1 "Isolated charge" 2 "Non-isolated charge" 3 "External charge (battery outside vehicle)" 4 "Transitory" 5 "Driving" 6 "Init" 7 "DC Charging without RISOL" 8 "risolCheckMode" 9 "DC Charging with RISOL" 10 "FOTA on going wait for HV relays opening" 11 "Reserved" 12 "Reserved" 13 "Reserved" 14 "Reserved" 15 "Reserved";
+VAL_ 903 BMS2_ElecSysFailureDisplay 0 "No Alert" 1 "Check Electrical System Alert";
+VAL_ 903 BMS2_MajorElecFailureDisplay 0 "No Alert" 1 "Electrical Fault Danger Alert ";
+VAL_ 903 BMS2_ChargeFailureDisplay 0 "No Alert" 1 "Battery Charge Impossible Alert";
+VAL_ 248 BMS_InterlockHVconnector_v2 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable";
+VAL_ 248 HVPowerConnection 0 "Not used" 1 "Closing of Power Contacts Allowed" 2 "Closing of Power Contacts Not Allowed" 3 "Unavailable Value";
+VAL_ 248 BMS_InterlockServicePlug_v2 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable";
+VAL_ 1554 HVB_OverVoltageAlert_HV 0 "No Alert" 1 "Battery overvoltage alert";
+VAL_ 1554 HVB_UnderVoltageAlert_HV 0 "No Alert" 1 "Battery undervoltage alert";
+VAL_ 1554 HVB_CellOverVoltageAlert_HV 0 "Normal" 1 "Cell overvoltage alert";
+VAL_ 1554 HVB_CellUnderVoltageAlert_HV 0 "Normal" 1 "Cell undervoltage alert";
+VAL_ 1554 HVB_OverChargingAlert_HV 0 "No Alert" 1 "Battery over-charging alert";
+VAL_ 1554 HVBatteryTempWarning_HV 0 "No Alert" 1 "Temperature difference Alert";
+VAL_ 897 EndOfChargeRequest 0 "Not used" 1 "End of Charge Not Requested" 2 "End of Charge Requested" 3 "Unavailable Value";
+VAL_ 897 BMS_RefusetoSleep 0 "reserved" 1 "LBC refuse to sleep " 2 "LBC ready to sleep" 3 "reserved";
+VAL_ 904 BMS_ElecSysFailureDisplay 0 "No alert" 1 "Check Electrical System Alert";
+VAL_ 904 BMS_MajorElecFailureDisplay 0 "No Alert" 1 "Electrical Fault Danger Alert";
+VAL_ 904 BMS_ChargeFailureDisplay 0 "No Alert" 1 "Battery Charge Impossible Alert ";
+VAL_ 904 HVB_HighTempAlert_HV 0 "No Overheat alert" 1 "Overheat alert";
+VAL_ 904 BMS_TiAlert 0 "No TI alert" 1 "TI alert";
+VAL_ 1007 FastChargeRelayStatus 0 "No Failure" 1 "Failure detected";
+VAL_ 1007 OperatingTypeStatus 0 "No request" 1 "Isolated charge" 2 "Non-isolated charge" 3 "External charge (battery outside vehicle)" 4 "Transitory" 5 "Driving" 6 "Init" 7 "DC Charging without RISOL" 8 "risolCheckMode" 9 "DC Charging with RISOL" 10 "FOTA on going wait for HV relays opening" 11 "Reserved" 12 "Reserved" 13 "Reserved" 14 "Reserved" 15 "Reserved";
+VAL_ 1007 BMS_InterlockHVChargerConnector 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable";
+VAL_ 1007 BMS_InterlockHVChargerFuseLid 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable";
+VAL_ 1007 BMS_FaultType 0 "No failure" 1 "Reserved for safety" 2 "Reserved for safety" 3 "High Voltage battery level 1 failure" 4 "Reserved for safety" 5 "Safety mode 1 flag" 6 "High Voltage battery level 2 failure" 7 "Reserved for safety";
+VAL_ 1726 BSOadaptationRequest 0 "No BSOC adaptation" 1 "BSOC adaptation request";
+VAL_ 328 CHGDCInterlockState 0 "Unvailable Value" 1 "Interlock Open" 2 "Interlock Close" 3 "Not used";
+VAL_ 328 CHGMainsACInterlockState 0 "Unvailable Value" 1 "Interlock Open" 2 "Interlock Close" 3 "Not used";
+VAL_ 910 CHGLoadState 0 "Unavailable Value" 1 "Charge" 2 "Power On" 3 "Reserved" 4 "Standby" 5 "Reserved" 6 "Not used" 7 "Not used";
+VAL_ 910 CHGRefuseToSleep 0 "Reserved" 1 "CHG refuse to sleep " 2 "CHG ready to sleep" 3 "Reserved";
+VAL_ 905 CHG_FaultType 0 "No failure" 1 "Failure 1" 2 "Failure 2" 3 "Failure 3" 4 "Failure 4" 5 "Failure 5" 6 "Failure 6" 7 "Failure 7";
+VAL_ 905 CHG_ChargeFailureDisplay 0 "No alert" 1 "Alert";
+VAL_ 899 DCDC_RefusetoSleep 0 "reserved" 1 "DCDC refuse to sleep " 2 "DCDC ready to sleep" 3 "reserved";
+VAL_ 899 DCDC_Fault_Type 0 "No Fault type" 1 "Fault type 1 DCDC Stopped CLASS C" 2 "Fault type 2 DCDC Stopped CLASS D" 3 "Fault type 3 DCDC Unballast" 4 "Fault type 4 DCDC Safety Barrier lost" 5 "Fault Type 5" 6 "Reserved" 7 "Reserved";
+VAL_ 899 DCDCState 0 "Starting mode (power not yet available)" 1 "Standby" 2 "Direct Mode" 3 "Unavailable";
+VAL_ 899 DCDC_MajorElecFailureDisplay 0 "No Alert" 1 "Alert";
+VAL_ 899 DCDC_ElecSysFailureDisplay 0 "No Alert" 1 "Alert";
+VAL_ 241 ICE_EngineStatus 0 "engine stopped" 1 "engine stalled" 2 "engine driven" 3 "engine autonomous";
+VAL_ 241 ICE_RiCloseLoopState 0 "Unavailable Value" 1 "Closed loop conditions OFF" 2 "Closed loop conditions ON" 3 "Not used";
+VAL_ 241 ICE_EngineRPMValidity 0 "Information calculated from crankkshaft sensor" 1 "Information calculated from camshaft sensor" 2 "Information not available" 3 "Unavailable value";
+VAL_ 1576 RefuelRelatedComponentFailure_HV 0 "No Failure Detected" 1 "Fail";
+VAL_ 1576 PurgeFlowMonitorCompletion_HV 0 "Not Completed" 1 "Completed";
+VAL_ 1576 PurgeFlowMonitorRunning_HV 0 "Running" 1 "Not Running";
+VAL_ 1576 PurgeSystemFail_HV 0 "No Failure Detected" 1 "Fail";
+VAL_ 1576 PurgeFlowMonitorFail_HV 0 "No Failure Detected" 1 "Fail";
+VAL_ 1576 DifPresSenMonPermission_HV 0 "Permission" 1 "Prohibition";
+VAL_ 1576 OBFCMfreeze_HECM 0 "No request" 1 "OBD OBFCM calculation frozen";
+VAL_ 1576 IUPR_GeneralDenom_HV 0 "no increase denominator" 1 "increase denominator" 2 "freeze denominator" 3 "Not used";
+VAL_ 1576 IUPR_ColdStartDenom_HV 0 "no increase denominator" 1 "increase denominator" 2 "freeze denominator" 3 "Not used";
+VAL_ 1576 IUPR_EvapDenom_HV 0 "no increase denominator" 1 "increase denominator" 2 "freeze denominator" 3 "Not used";
+VAL_ 1576 OBFCMreset_HECM 0 "No request" 1 "OBD OBFCM reset";
+VAL_ 1576 ICE_DriveCycle 0 "No request" 1 "General Denomitar count request";
+VAL_ 243 ICE_TorqueRequestStatus 0 "normal" 1 "exact torque request can not be achieved (measure imprecision)" 2 "transcient state preventing torque request realization" 3 "torque request can not be achieved";
+VAL_ 243 ICE_DeactivationStatus 0 "No request" 1 "Limp-home activated" 2 "ICE stopped" 3 "Not used";
+VAL_ 243 ICE_CrankingAuthorization_ECM 0 "cranking not allowed" 1 "cranking allowed" 2 "cranking stopped required" 3 "no request";
+VAL_ 244 ICE_IdleSpeedStatus 0 "No Idle Speed closed loop regulation" 1 "Idle Speed closed loop regulation ON";
+VAL_ 244 ICE_CoolantZeroFlowInhibition 0 "zero flow strategy inhibited" 1 "zero flow strategy authorized";
+VAL_ 244 ICE_EngineStopPermission 0 "Engine Stop Prohibit" 1 "Engine Stop Permit";
+VAL_ 887 ICE_CAV_Diagnosis 0 "Unavailable" 1 "Diag 1" 2 "Diag 2" 3 "Diag 3" 4 "Diag 4" 5 "Diag 5" 6 "Diag 6" 7 "Diag 7";
+VAL_ 887 ICE_CAV_Position_FeedBack 0 "Unavailable" 1 "Position 1 (closed)" 2 "Position 2" 3 "Position 3" 4 "Position 4" 5 "Position 5" 6 "Position 6 (open)" 7 "Unknown position";
+VAL_ 887 ICE_FillerCapIndicatorONRequest 0 "Fuel fill cap indicator turn off" 1 "Fuel fill cap indicator turn on";
+VAL_ 887 ICE_CAV_Init_FeedBack 0 "No init" 1 "Init OK" 2 "Init  error" 3 "Unavailable";
+VAL_ 887 ICE_EngineCoolantTempFailure 0 "Coolant temperature calculated from sensor" 1 "Sensor failure and calculation from model" 2 "Sensor and model failure" 3 "Unavailable value";
+VAL_ 887 ICE_StopAutoForbidden 0 "stop auto autorised" 1 "stop auto inhibit or technical start";
+VAL_ 887 ICE_RevUpReqHighEngOilTemp 0 "Non Idle speed up request" 1 "Idle speed up request";
+VAL_ 887 ICE_EngineSpecificPhaseType 0 "No request" 1 "First warm-up request" 2 "Catalyst warm-up maintain request" 3 "OBD request" 4 "Evap request" 5 "passive regeneration tentative/management" 6 "GPF Heat-up needed " 7 "not used";
+VAL_ 889 TankDepressurizationAuthoriz_HV 0 "Authorization" 1 "No Authorization";
+VAL_ 889 BypassValveRequest_HV 0 "No request" 1 "Close Request";
+VAL_ 889 TankClosedValveRequest_HV 0 "No request" 1 "Open Request";
+VAL_ 889 PurgeControlAuthorization_HV 0 "No Authorization" 1 "Authorization";
+VAL_ 889 ICE_OilPressureWarning_ECM 0 "No Oil Pressure Warning" 1 "Oil Pressure Warning";
+VAL_ 889 ICE_WarningWaterTemp 0 "no water temperature warning" 1 "water temperature warning";
+VAL_ 889 ICE_EngineControlFailureLevel1 0 "no Engine Control Failure Level 1" 1 "Engine Control Failure Level 1";
+VAL_ 889 ICE_EngineControlFailureLevel2 0 "no Engine Control Failure Level 2 create by stoping the engine" 1 "Engine Control Failure Level 2 create by stoping the engine";
+VAL_ 889 ICE_ECM_VerlogStatus 0 "Unavailable" 1 "Vehicle unprotected by VERLOG or by RES" 2 "Vehicle protected" 3 "not used";
+VAL_ 889 ICE_ECM_OilPressureSWfaultDisp 0 "No oil pressure switch fault warning requested" 1 "Oil pressure switch fault warning requested";
+VAL_ 889 ICE_ManualPartFilterRegeStatus 0 "No DPF rege request" 1 "Rege needed speed condition" 2 "Rege needed" 3 "Rege ongoing";
+VAL_ 871 ICE_FaultType 0 "No request" 1 "Fail safe Motor Power Limit Request" 2 "Fail safe Revolution Limit Request" 3 "Fail safe Safety Fuel Cut Mode Request" 4 "Fail safe Engine Power Limit Request" 5 "Fail safe Accel Pedal Position Signal Rate Limit Request" 6 "Electrical Throttle Default Fail Flag" 7 "Fail safe ZEV mode Request" 8 "Electrical Throttle Default Request Flag" 9 "GPF Fail Safe (particule filter)" 10 "Not used" 11 "Not used" 12 "Not used" 13 "Not used" 14 "Not used" 15 "Unavailable value";
+VAL_ 871 ICE_OBD_Ready_On 0 "HEV system is in the state of Not-Ready-mode." 1 "HEV system is in the state of Ready-mode.";
+VAL_ 871 DrainCutValveRequest_HV 0 "Open request" 1 "Close request";
+VAL_ 871 LeakDetectionPumpRequest_HV 0 "No request" 1 "Request";
+VAL_ 871 ICE_EngNoLoadReq 0 "No Request" 1 "Engine no load request";
+VAL_ 871 ICE_EngNoLoadReq_2 0 "No Request" 1 "Engine no load request";
+VAL_ 871 ICE_OBDPrmtDelCdn 0 "OBD PDTC Delete Condition not deteted" 1 "OBD PDTC Delete Condition deteted";
+VAL_ 871 ICE_OBDWarmUpCycleDet 0 "Warm Up Cycle is not completed" 1 "Warm Up Cycle is completed";
+VAL_ 871 ICE_StartEngineRequest 0 "No request" 1 "Thermal engine start request";
+VAL_ 252 ICE_ClutchEngageEnable 0 "Clutch closing not authorized" 1 "Clutch closing authorized";
+VAL_ 252 ICE_FuelCutCylinderNo 0 "Fuel-cut is not executing" 1 "1 cylinder Fuel-cut" 2 "2 cylinder Fuel-cut" 3 "3 cylinder Fuel-cut" 4 "4 cylinder Fuel-cut" 5 "5 cylinder Fuel-cut" 6 "6 cylinder Fuel-cut" 7 "Unvailable value";
+VAL_ 252 ICE_FirstIgnitionExperience 0 "First ignition not finished" 1 "First ignition finished";
+VAL_ 252 ICE_VTCIntermediateLockStatus 0 "VTC intermediate-lock not engaged" 1 "VTC Intermediate-lock engaged";
+VAL_ 252 ICE_CombustionAssistMode 0 "Normal starting torque demand assist combustion" 1 "Torque demand during start assist combustion" 2 "Small start-up torque demand assist combustion" 3 "Minimum starting torque demand assist combustion";
+VAL_ 252 ICE_StarterEngineStartFeedBack 0 "starter engine start not required" 1 "starter engine start required";
+VAL_ 252 ICE_Fuelcutprohibitrequest 0 "Fuel cut prohibit not requested" 1 "Fuel cut prohibit requested";
+VAL_ 252 ICE_VoltageRateByECM 0 "No request" 1 "Rate 1" 2 "Rate 2" 3 "Rate 3" 4 "Rate 4" 5 "Not used" 6 "Not used" 7 "Not used";
+VAL_ 1257 PurgeFlowCompletion_HV 0 "Not in purge completion phase" 1 "Purge without canister" 2 "Purge with canister" 3 "Unavailable value";
+VAL_ 238 ICE_EngineFuelCutType 0 "Fast type for fuel cut request" 1 "Smooth type for fuel cut request";
+VAL_ 238 ICE_TransmRangeEngagedCurrent 0 "Not used" 1 "1st range" 2 "2nd range" 3 "3rd range" 4 "4th range" 5 "5th range" 6 "6th range" 7 "7th range" 8 "8th range" 9 "reverse" 10 "neutral or parking" 11 "Not used" 15 "Unavailable";
+VAL_ 238 ICE_TransmRangeEngagedTarget 0 "Not used" 1 "1st range" 2 "2nd range" 3 "3rd range" 4 "4th range" 5 "5th range" 6 "6th range" 7 "7th range" 8 "8th range" 9 "reverse" 10 "neutral or parking" 11 "Not used" 15 "Unavailable";
+VAL_ 238 ICE_StartAutoRequest 0 "no start request" 1 "optimum starter cranking" 2 "robust starter cranking" 3 "quick response eMotor cranking" 4 "smooth eMotor cranking" 5 "robust eMotor cranking" 6 "not used" 7 "Unavailable";
+VAL_ 238 ICE_StopAutoRequest 0 "Stop Auto NOT Requested" 1 "Stop Auto Requested";
+VAL_ 238 ICE_CurativeAntiJerkActivation 0 "No Curative AntiJerk Mode" 1 "Curative AntiJerk Mode";
+VAL_ 238 ICE_EngineFullLoadRequest 0 "Engine full load not requested" 1 "Engine full load requested";
+VAL_ 238 ICE_EngineStopAnnouncement 0 "no notification" 1 "notification of engine stop";
+VAL_ 238 ICE_SystemReadyStatus 0 "powertrain not ready for traction" 1 "powertrain ready for traction";
+VAL_ 238 ICE_IdleSpeedRequest 0 "No request" 1 "Engine Idle speed control request";
+VAL_ 1088 VDC_MILlamp_HV 0 "MIL lamp display not requested" 1 "MIL lamp display requested";
+VAL_ 1088 EBA_MILlamp_HV 0 "MIL lamp display not requested" 1 "MIL lamp display requested";
+VAL_ 1088 EVAP_EngineStartAutoRequest_HV 0 "No Request" 1 "Start ICE engine request";
+VAL_ 1088 EVAP_MILlamp_HV 0 "MIL lamp off request" 1 "MIL Lamp on request" 2 "MIL lamp flash request" 3 "MIL lamp auto-test";
+VAL_ 1088 ME_RisolCheckModeRequest 0 "Deactive Risol check mode" 1 "Activate Risol check mode";
+VAL_ 1088 PowerRelayState 0 "Precharge" 1 "Closed" 2 "Opened" 3 "TransitoryState" 4 "Risol Relay P Check" 5 "Risol Relay N Check" 6 "not used" 7 "not used";
+VAL_ 1088 EVAPmodeStatus_HV_v2 0 "No tank Depressurize mode" 1 "Purge inhibition during refueling mode " 2 "Tank Depressurize mode" 3 "Not used";
+VAL_ 1088 EvapLeakMonitorDenomIncrement_HV 0 "No Request" 1 "Denominator Increment Counter";
+VAL_ 1088 BatteryVoltage12V_HV 0 "No request" 1 "Freeze ePTC request";
+VAL_ 1230 OperatingTypeRequest 0 "No request" 1 "Isolated charge" 2 "Non-isolated charge" 3 "Driving" 4 "External charge (battery outside vehicle)" 5 "DC charging without RISOL" 6 "DC charging with RISOL" 7 "BMS FOTA on going Ack";
+VAL_ 1617 PurgeFlowMonitorPermission_HV 0 "Permission" 1 "Prohibition";
+VAL_ 1617 BypassValveStatus_HV 0 "Open" 1 "Close";
+VAL_ 1617 ELCMvalveStatus_HV 0 "Open" 1 "Close";
+VAL_ 1617 OBFCMfreeze_HEVC 0 "No request" 1 "OBD OBFCM calculation frozen";
+VAL_ 1617 OBFCMreset_HEVC 0 "No request" 1 "OBD OBFCM reset";
+VAL_ 239 ME_ControlMode 0 "not used" 1 "torque mode" 2 "Reserved for Safety" 3 "Reserved for Safety" 4 "speed mode" 5 "Reserved for Safety" 6 "Reserved for Safety" 7 "not used";
+VAL_ 239 B_PEBDischarge_sch_req 0 "Not used" 1 "Discharge not requested" 2 "Discharge requested" 3 "Unavailable value";
+VAL_ 239 CHGcontrolPilotState 0 "Reserved" 1 "State B" 2 "State C" 3 "State D - Reserved" 4 "State E/F" 5 "Not used" 6 "Reserved" 7 "Unvailable";
+VAL_ 240 HSG_ControlMode 0 "not used" 1 "torque mode" 2 "Reserved for Safety" 3 "Reserved for Safety" 4 "speed mode" 5 "Reserved for Safety" 6 "Reserved for Safety" 7 "not used";
+VAL_ 240 ME_InverterActivation_v2 0 "Not used" 1 "Inverter Off" 2 "Inverter On" 3 "Inverter ON + préflux" 4 "Voltage Mode" 5 "Prepare to Sleep" 6 "Inverter on Low Efficiency" 7 "Unavailable value";
+VAL_ 240 ME_CurativeAntiJerkActivation 0 "No Curative AntiJerk Mode" 1 "Curative AntiJerk Mode";
+VAL_ 240 MotorDryingRequest 0 "No Request" 1 "Motor Drying Request";
+VAL_ 883 HEVC_WakeUpSleepCommand 0 "Go to Sleep" 1 "reserved" 2 "reserved" 3 "WakeUp";
+VAL_ 883 TankDepressurizationStatus_HV 0 "No Tank Depressurization" 1 "Tank Depressurization Start" 2 "Remaining purge without canister" 3 "Remaining purge with canister" 4 "Tank Depressurization On going" 5 "Tank Depressurization Inhibition" 6 "not used" 7 "not used";
+VAL_ 883 HSG_InverterActivation 0 "Not used" 1 "Inverter Off" 2 "Inverter On" 3 "Inverter On + preflux" 4 "Voltage Mode" 5 "Prepare to Sleep" 6 "Not Used" 7 "Unavailable value";
+VAL_ 883 DCDCActivation 0 "Not used" 1 "DCDC Off" 2 "DCDC On" 3 "Unavailable value";
+VAL_ 883 ICE_FillerCapIndicatorResetStatus 0 "No reset" 1 "Reset";
+VAL_ 883 PurgeOpenLoopRequest_HV 0 "Purge open loop not requested" 1 "Purge open loop requested";
+VAL_ 883 ETS_SleepMode 0 "Normal Sleeping" 1 "14V Battery Management" 2 "Quick Drop" 3 "Unavailable Value";
+VAL_ 883 EVAP_FaultType_HV 0 "No Failure " 1 "Failure ";
+VAL_ 883 EvapLeakNotExist_HV 0 "Judgement not exist" 1 "Judgementexist";
+VAL_ 883 IgnitionSupplyConfirmation_HV 0 "no primary ignition supply" 1 "primary ignition supply on";
+VAL_ 883 CHGStateRequest 0 "Reserved" 1 "Charge" 2 "Power On" 3 "Reserved" 4 "Standby" 5 "Reserved" 6 "Not used" 7 "Unavailable Value";
+VAL_ 883 GADE_HV 0 "Sleep or Crank fault, Disable DiagMuxDTC" 1 "AutoACC fault, Disable DiagMuxDTC" 2 "ALL fault, Disable DiagMuxDTC" 3 "ALL fault, Enable DiagMuxDTC" 4 "Not used" 5 "Not used" 6 "Not used" 7 "Unavailable";
+VAL_ 885 HEVC_MILLamp 0 "MIL lamp off request" 1 "MIL Lamp on request" 2 "MIL lamp flash request" 3 "MIL lamp auto-test";
+VAL_ 885 CAV_Position_Request_HV 0 "No request" 1 "Position 1" 2 "Position 2" 3 "Position 3" 4 "Position 4" 5 "Position 5" 6 "Position 6" 7 "Unavailable";
+VAL_ 885 CAV_Init_Request_HV 0 "No init" 1 "Init request";
+VAL_ 885 DiagnosedFuelLow_HV 0 "Unavailable" 1 "Not empty" 2 "Empty" 3 "Not used";
+VAL_ 885 EvapLeakDetected_HV 0 "No leak detected" 1 "Leak detected";
+VAL_ 885 OilChangeCounterReset_HV 0 "No request" 1 "Oil change counter reset";
+VAL_ 885 ICE_NoLoadExecution 0 "Engine load condition" 1 "Engine no load condition";
+VAL_ 885 ICE_CompressionCheck 0 "No compression check request" 1 "Compression check request";
+VAL_ 885 RefuelingStatus_HV 0 "No refueling" 1 "Refueling in progress";
+VAL_ 885 InverterChargeRequest 0 "Not used" 1 "No charge requested" 2 "Charge requested" 3 "Unavailable";
+VAL_ 885 BrakeInfoStatus_HV 0 "Not used" 1 "Brake pedal not pressed" 2 "Brake pedal pressed" 3 "Not used" 4 "Brake pedal confirmed pressed" 5 "Not used" 6 "Not used" 7 "unavailable";
+VAL_ 885 FuelFillerCapStatus_HV 0 "Cap is present" 1 "Cap is missing";
+VAL_ 885 EvapLeakMonitorNumerIncrement_HV 0 "No Request" 1 "Numerator Increment Counter";
+VAL_ 886 BatteryZeroAmpereStatus 0 "Charge" 1 "Zero Ampere" 2 "Other mode" 3 "Unavailable";
+VAL_ 886 BatteryManagementMode 0 "Charge sustaining" 1 "Charge depleting" 2 "Other mode (charge or asleep)" 3 "Unavailable value";
+VAL_ 886 CanisterPurgeAuthorization_HV 0 "Canister Purge Not Authorized" 1 "Canister Purge Authorized";
+VAL_ 306 ME_DeactivationRequest 0 "Normal" 1 "Reserved for safety" 2 "Reserved for safety" 3 "Torque interruption request / voltage mode allowed" 4 "Reserved for safety" 5 "Torque interruption request / zero-torque regulation all" 6 "Reserved for safety" 7 "Reserved for safety" 8 "Reserved for safety" 9 "Reserved for safety" 10 "Reserved for safety" 11 "Reserved for safety" 12 "Torque interruption request / immediate shut-off" 13 "Reserved for safety" 14 "Reserved for safety" 15 "Reserved for safety";
+VAL_ 306 HSG_DeactivationRequest_ 0 "Normal" 1 "Reserved for safety" 2 "Reserved for safety" 3 "Torque interruption request / voltage mode allowed" 4 "Reserved for safety" 5 "Torque interruption request / zero-torque regulation all" 6 "Reserved for safety" 7 "Reserved for safety" 8 "Reserved for safety" 9 "Reserved for safety" 10 "Reserved for safety" 11 "Reserved for safety" 12 "Torque interruption request / immediate shut-off" 13 "Reserved for safety" 14 "Reserved for safety" 15 "Reserved for safety";
+VAL_ 307 ICE_DeactivationRequest 0 "No request" 1 "Limp-home requested" 2 "Immediate shut-off" 3 "Not used";
+VAL_ 307 RESstatus_HV 0 "Unavailable" 1 "Reserved for safety" 2 "Reserved for safety" 3 "Normal engine start only" 4 "Reserved for safety" 5 "Reserved for safety" 6 "wait for RES / Presoak" 7 "Reserved for safety" 8 "Reserved for safety" 9 "Customer Starting" 10 "Reserved for safety" 11 "Reserved for safety" 12 "Remote Engine Start" 13 "Reserved for safety" 14 "Reserved for safety" 15 "Vehicle without RES";
+VAL_ 253 ICE_EngineTorqueUpReq 0 "Not Engine Torque Up Request" 1 "Engine Torque Up Request";
+VAL_ 253 ICE_EngineDriven 0 "Engine not driven" 1 "Engine driven";
+VAL_ 253 ICE_NeutSw 0 "Lever not in neutral nor park position" 1 "Lever in neutral or park position";
+VAL_ 253 ICE_EngineStopIGOFF 0 "No Engine stop preparation at Ignition OFF request " 1 "Engine stop preparation at Ignition OFF request ";
+VAL_ 253 ICE_VTCIntermediateLockRequest 0 "VTC intermediate-lock not requested" 1 "VTC intermediate-lock requested";
+VAL_ 253 HSG_CurativeAntiJerkActivation 0 "No Curative AntiJerk Mode" 1 "Curative AntiJerk Mode";
+VAL_ 247 HSG_ElecMAchineWorkingMode 0 "Unvailable Value" 1 "Motor Mode" 2 "Generator Mode" 3 "Not used";
+VAL_ 249 HSG_DeactivationStatus 0 "Normal" 1 "Voltage mode activated" 2 "Zero-torque regulation activated" 3 "Electrical Machine stopped";
+VAL_ 249 HSG_InterlockHVConnector 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable";
+VAL_ 249 HSG_InterlockMotor 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable";
+VAL_ 249 HSG_ControlModeStatus 0 "Torque mode" 1 "Speed Control mode" 2 "Voltage Control mode" 3 "Unavailable";
+VAL_ 895 HSG_RefusetoSleep 0 "reserved" 1 "HSG refuse to sleep " 2 "HSG ready to sleep" 3 "reserved";
+VAL_ 895 HSG_InverterFault_Type 0 "No Fault type" 1 "Fault type 1" 2 "Fault type 2" 3 "Safety Reserved" 4 "Fault type 3" 5 "Fault type 4" 6 "Fault type 5" 7 "Reserved";
+VAL_ 895 HSG_ElecPowerTrainMngtState 0 "Power Off" 1 "Not used " 2 "Stand By " 3 "Not used" 4 "Power On" 5 "Voltage Mode" 6 "Preparing to Sleep" 7 "Unvailable Value";
+VAL_ 895 HSG_VerlogStatus 0 "Unavailable" 1 "Vehicle unprotected by VERLOG or by RES" 2 "Vehicle protected" 3 "not used";
+VAL_ 895 HSG_ElecSysFailureDisplay 0 "No Alert" 1 "Alert";
+VAL_ 895 HSG_ElecMotorFailureDisplay 0 "No Alert" 1 "Alert";
+VAL_ 895 HSG_MajorElecFailureDisplay 0 "No Alert" 1 "Alert";
+VAL_ 895 HSG_InterlockFuseLid 0 "Not Used" 1 "Interlock Open" 2 "Interlock Closed" 3 "Unavailable Value";
+VAL_ 245 ElecMAchineWorkingMode 0 "Unvailable Value" 1 "Motor Mode" 2 "Generator Mode" 3 "Not used";
+VAL_ 245 ME_DeactivationStatus 0 "Normal" 1 "Voltage mode activated" 2 " Zero-torque regulation activated" 3 "ME stopped";
+VAL_ 245 ME_RisolCheckModeStatus 0 "No RIsol Check Mode" 1 "RIsol Check Mode";
+VAL_ 246 PEBActiveDischarge 0 "Active Discharge Not In Progress" 1 "Active Discharge In Progress";
+VAL_ 246 ME_InterlockHVaccessories 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable";
+VAL_ 246 ME_ControlModeStatus 0 "Torque mode" 1 "Speed Control mode" 2 "Voltage Control mode" 3 "Unavailable";
+VAL_ 894 ME_RefuseToSleep 0 "reserved" 1 "PEB refuse to sleep" 2 "PEB ready to sleep" 3 "reserved";
+VAL_ 894 ME_ChargeFailureDisplay 0 "No alert" 1 "Alert";
+VAL_ 894 ME_InverterFault_Type 0 "No Fault type" 1 "Fault type 1" 2 "Fault type 2" 3 "Safety Reserved" 4 "Fault type 3" 5 "Fault type 4" 6 "Fault type 5" 7 "Fault type 6";
+VAL_ 894 InverterChargeState 0 "In charge" 1 "Not in charge";
+VAL_ 894 ME_InterlockMotor 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable";
+VAL_ 894 ElecPowerTrainMngtState 0 "Power Off" 1 "Power on Low Efficiency" 2 "Stand By " 3 "Not used" 4 "Power On" 5 "Mode Tension" 6 "Preparing to sleep" 7 "Unvailable Value";
+VAL_ 894 ME_VerlogStatus 0 "Unavailable" 1 "Vehicle unprotected by VERLOG or by RES" 2 "Vehicle protected" 3 "Not used";
+VAL_ 894 ME_ElecSysFailureDisplay 0 "No Alert" 1 "Alert";
+VAL_ 894 ME_ElecMotorFailureDisplay 0 "No Alert" 1 "Alert";
+VAL_ 894 ME_MajorElecFailureDisplay 0 "No Alert" 1 "Alert";
+VAL_ 41 LeakageCurrentEmergencyStop 0 "Reserved for safety" 1 "Emergency charge stop not requested" 2 "Emergency charge stop requested" 3 "Reserved for safety";
+VAL_ 41 NumberOfPhasesUsed 0 "one phase" 1 "two phases" 2 "three Phases" 3 "Unvailable Value";
+VAL_ 41 CHG_InterlockFuseLid 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable";
+VAL_ 41 CHG_InterlockHVaccessories 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable";
+VAL_ 41 CHG_InterlockHVaccessories2 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable";
